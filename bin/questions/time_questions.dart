@@ -1,6 +1,4 @@
 import 'dart:io';
-
-
 //implementar o Timing!
 
 class TimeQuestions{

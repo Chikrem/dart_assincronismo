@@ -19,7 +19,7 @@ void main() {
     //     .onError((error, stackTrace) => print('An Error occurred'))
     //     .whenComplete(() => print('The Future is Over'));
 
-    Future<int> myFutureErrorFunc(int a, int b) async {
+  Future<int> myFutureErrorFunc(int a, int b) async {
     try{
       if(b>a){
         throw Exception();
@@ -42,4 +42,5 @@ void main() {
   myFutureErrorFunc(2, 1).then((value) => print('The value is: $value'));
 
   print('Done with main');
+
 }

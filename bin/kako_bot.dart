@@ -1,18 +1,17 @@
 
 import 'dart:io';
 
+import 'questions/good_manners.dart';
 import 'questions/time_questions.dart';
 import 'timing/waiting_timing.dart';
-
 
 void main() async{
   String kakoBot = 'KakoBOT:\n';
   var a = true;
   String usuario = '';
 
-  var myStream = BotClock().kakoBotStream(1,10);   // Criando Stream
-
-  var subscriber = myStream.listen((event) {      // Adicionando Listener / Subscriber
+  var myStream = BotClock().kakoBotStream(1,10);
+  var subscriber = myStream.listen((event) {
     print('                      KakoBot está ativo a: $event segundos');
   },onDone: (){
     print('KakoBot está sendo finalizado! Faça a ultima pergunta.');
@@ -36,6 +35,8 @@ void main() async{
       // verificar antes, assim não fazemos toda a função sem precisar.
       TimeQuestions(usuario).timeQuestion();
       await  BotClock().clock(1);
+    } else if (GoodManners(usuario).isThisManners()) {
+      GoodManners(usuario).goodManners();
     } else if (false) {
       //Basta adicionar novas perguntas aqui!
     }else {

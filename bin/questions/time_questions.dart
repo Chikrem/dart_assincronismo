@@ -1,5 +1,4 @@
 // Importa a biblioteca necessária para entrada e saída (I/O) no terminal.
-// Início Aula-3
 import 'dart:io';
 
 // Classe `TimeQuestions` para lidar com perguntas relacionadas ao tempo (horas, dia, ano).
